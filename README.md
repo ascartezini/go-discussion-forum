@@ -2,7 +2,7 @@
 
 Sample project using Golang with Clean Architecture
 
-To do
+To do list
 
 Save data in DynamoDB
 Add serverless configuration (API Gateway, Lambda, DynamoDB)
