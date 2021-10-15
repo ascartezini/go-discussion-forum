@@ -8,7 +8,7 @@ To do list
 * Implement lambda function handlers
 * Implement all CRUD endpoints
 * Add serverless framework configuration (API Gateway, Lambda, DynamoDB)
-* Add Redis for caching layer
 * Abstract HTTP Server using interfaces
 * Add unit tests
+* Add Redis for caching layer
 
