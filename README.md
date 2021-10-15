@@ -6,5 +6,7 @@ To do list
 
 * Save data in DynamoDB using single-table design
 * Add serverless configuration (API Gateway, Lambda, DynamoDB)
-* Add unit tests
+* Add Redis for caching layer
 * Abstract HTTP Server using interfaces
+* Add unit tests
+
