@@ -5,6 +5,6 @@ import (
 )
 
 type PostRepository interface {
-	Add(p models.Post) error
+	Add(p models.Post) (string, error)
 	Delete(id int) error
 }

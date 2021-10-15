@@ -40,7 +40,7 @@ func (h *AddPostHandler) Handle() http.HandlerFunc {
 			return
 		}
 
-		err = h.AddPostUseCase.AddPost(post)
+		newId, err := h.AddPostUseCase.AddPost(post)
 		if err != nil {
 			msg := fmt.Sprintf("an error occurred while trying to create a post: %v\n", err)
 			log.Println(msg)
@@ -48,6 +48,10 @@ func (h *AddPostHandler) Handle() http.HandlerFunc {
 			w.Write([]byte(fmt.Sprintf(`{"message": %s}`, msg)))
 			return
 		}
+
+		w.WriteHeader(http.StatusCreated)
+		w.Header().Set("Location", fmt.Sprintf("posts/%s", newId))
+		post.ID = newId
 
 		json.NewEncoder(w).Encode(post)
 	}

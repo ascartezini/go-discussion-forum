@@ -9,12 +9,13 @@ type AddPostUseCase struct {
 	PostRepository repositories.PostRepository
 }
 
-func (usecase *AddPostUseCase) AddPost(post models.Post) error {
-	err := usecase.PostRepository.Add(post)
+func (usecase *AddPostUseCase) AddPost(post models.Post) (string, error) {
+	newId, err := usecase.PostRepository.Add(post)
 
 	if err != nil {
 		println(err)
+		return "", err
 	}
 
-	return nil
+	return newId, nil
 }
