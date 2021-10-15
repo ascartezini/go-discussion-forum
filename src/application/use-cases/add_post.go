@@ -9,7 +9,7 @@ type AddPostUseCase struct {
 	PostRepository repositories.PostRepository
 }
 
-func (usecase *AddPostUseCase) AddPost(post models.Post) (string, error) {
+func (usecase *AddPostUseCase) Handle(post models.Post) (string, error) {
 	newId, err := usecase.PostRepository.Add(post)
 
 	if err != nil {

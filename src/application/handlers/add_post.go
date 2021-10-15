@@ -40,7 +40,7 @@ func (h *AddPostHandler) Handle() http.HandlerFunc {
 			return
 		}
 
-		newId, err := h.AddPostUseCase.AddPost(post)
+		newId, err := h.AddPostUseCase.Handle(post)
 		if err != nil {
 			msg := fmt.Sprintf("an error occurred while trying to create a post: %v\n", err)
 			log.Println(msg)
