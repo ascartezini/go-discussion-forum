@@ -1,0 +1,20 @@
+service: serverless-project-name
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: stage, 'dev'
+  region: region, 'us-east-1'
+  memorySize: 128
+  timeout: 3
+
+handler:
+  handler: bin/add-post    
+  memorySize: 128
+  timeout: 3
+  events:
+  - http:
+      path: post
+      method: post      
+  
+    
